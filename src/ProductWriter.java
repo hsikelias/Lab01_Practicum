@@ -4,44 +4,22 @@ import java.util.ArrayList;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import static java.nio.file.StandardOpenOption.CREATE;
 
-
-
-/*
-1.	Create the two programs ProductReader.java and ProductWriter.java
-2.	Here is the product info:
-a.	ID (a String as before in Person)
-b.	Name (a String)
-c.	Description (a String a short sentence)
-d.	Cost (This is currency so it will be a Java double)
-3.	Use your program to create the following ProductTestData.txt file
-
-000001, Pipeweed, Long Bottom Leaf, 600.0
-000002, Lembas, Elven Wayfare Bread, 200.0
-000003, Wine, Woodland Elf Wine, 400.0
-000004, Mushrooms, Farmer Took’s Finest, 125.0
-000005, Mithril, Enchanted Dwarven Armor, 3000.0
-*/
-
-
-public class PersonGenerator
+public class ProductWriter
 {
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
 
         String id = "";
-        String firstName = "";
-        String lastName = "";
-        String title = "";
-        int yearOfBirth = 0;
+        String name = "";
+        String description = "";
+        double cost = 0.0;
         boolean done = false;
         String rec;
 
         ArrayList<String> recs = new ArrayList<>();
-
         do
         {
             id = SafeInput.getRegExString(
@@ -50,31 +28,25 @@ public class PersonGenerator
                     "\\d{6}"
             );
 
-            firstName = SafeInput.getNonZeroLenString(
+            name = SafeInput.getNonZeroLenString(
                     in,
-                    "Enter the first name"
+                    "Enter the product name"
             );
 
-            lastName = SafeInput.getNonZeroLenString(
+            description = SafeInput.getNonZeroLenString(
                     in,
-                    "Enter the last name"
+                    "Enter the product description"
             );
 
-            title = SafeInput.getNonZeroLenString(
+            cost = SafeInput.getDouble(
                     in,
-                    "Enter the title"
-            );
-
-            yearOfBirth = SafeInput.getInt(
-                    in,
-                    "Enter the year of birth"
+                    "Enter the product cost"
             );
 
             rec = id + ", " +
-                    firstName + ", " +
-                    lastName + ", " +
-                    title + ", " +
-                    yearOfBirth;
+                    name + ", " +
+                    description + ", " +
+                    cost;
 
             recs.add(rec);
 
@@ -83,16 +55,13 @@ public class PersonGenerator
 
             done = SafeInput.getYNConfirm(
                     in,
-                    "Done entering people?"
+                    "Done entering products?"
             );
-
         } while (!done);
-
         String fileName = SafeInput.getNonZeroLenString(
                 in,
                 "Enter the file name"
         );
-
         File workingDirectory =
                 new File(System.getProperty("user.dir"));
 
@@ -119,7 +88,6 @@ public class PersonGenerator
             }
 
             writer.close();
-
             System.out.println("\nData file written successfully!");
             System.out.println("Saved as: " + fileName);
         }
@@ -127,7 +95,6 @@ public class PersonGenerator
         {
             e.printStackTrace();
         }
-
         in.close();
     }
 }

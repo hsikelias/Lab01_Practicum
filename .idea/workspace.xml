@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d9039a3-21e4-4cb9-908b-dce0c19a1d45" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ProductReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ProductWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PersonReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PersonReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonTestData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PersonTestData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PersonGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PersonGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SafeInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SafeInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +40,8 @@
   "keyToString": {
     "Application.PersonGenerator.executor": "Run",
     "Application.PersonReader.executor": "Run",
+    "Application.ProductReader.executor": "Run",
+    "Application.ProductWriter.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
